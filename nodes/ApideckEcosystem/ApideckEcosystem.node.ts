@@ -6,32 +6,32 @@ import { categoryDescription } from './resources/category';
 import { productDescription } from './resources/product';
 
 export class ApideckEcosystem implements INodeType {
-	description: INodeTypeDescription = {
-		displayName: 'Apideck Ecosystem',
-		name: 'N8nDevApideckEcosystem',
-		icon: { light: 'file:./apideck-ecosystem.png', dark: 'file:./apideck-ecosystem.dark.png' },
-		group: ['input'],
-		version: 1,
-		subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
-		description: 'Ecosystem API',
-		defaults: { name: 'Apideck Ecosystem' },
-		usableAsTool: true,
-		inputs: [NodeConnectionTypes.Main],
-		outputs: [NodeConnectionTypes.Main],
-		credentials: [
-			{
-				name: 'N8nDevApideckEcosystemApi',
-				required: true,
-			},
-		],
-		requestDefaults: {
-			baseURL: '={{\$credentials.url}}',
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json',
-			},
-		},
-		properties: [
+        description: INodeTypeDescription = {
+                displayName: 'Apideck Ecosystem',
+                name: 'N8nDevApideckEcosystem',
+                icon: { light: 'file:./apideck-ecosystem.png', dark: 'file:./apideck-ecosystem.dark.png' },
+                group: ['input'],
+                version: 1,
+                subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
+                description: 'Ecosystem API',
+                defaults: { name: 'Apideck Ecosystem' },
+                usableAsTool: true,
+                inputs: [NodeConnectionTypes.Main],
+                outputs: [NodeConnectionTypes.Main],
+                credentials: [
+                        {
+                                name: 'N8nDevApideckEcosystemApi',
+                                required: true,
+                        },
+                ],
+                requestDefaults: {
+                        baseURL: '={{\$credentials.url}}',
+                        headers: {
+                                Accept: 'application/json',
+                                'Content-Type': 'application/json',
+                        },
+                },
+                properties: [
 		{
 			"displayName": "Resource",
 			"name": "resource",
@@ -71,6 +71,6 @@ export class ApideckEcosystem implements INodeType {
 		...collectionDescription,
 		...categoryDescription,
 		...productDescription
-		],
-	};
+                ],
+        };
 }
